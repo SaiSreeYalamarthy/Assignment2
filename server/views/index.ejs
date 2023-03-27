@@ -1,0 +1,71 @@
+<html>
+<head>
+<style>
+h1 {
+font-family: 'Tangerine', serif;
+font-size: 48px;
+}
+body {
+  background-image: url('/server/views/mart.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+      }
+input[type="file"] {
+        position: absolute;
+        z-index: -1;
+        top: 15px;
+        left: 20px;
+        font-size: 17px;
+        color: #b8b8b8;
+      }
+.button-wrap {
+        position: relative;
+}
+.button {
+        display: inline-block;
+        background-color: #1d6355;
+        border-radius: 10px;
+        border: 4px double #cccccc;
+        color: #ffffff;
+        text-align: center;
+        font-size: 20px;
+        padding: 8px;
+        width: 100px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+}
+.button:hover {
+	background-color: #00ab97;
+ }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="button-wrap">
+      <h1>SSY SuperMarket</h1>
+      <p> Hi welcome to SSY mart Inventory Mangement.</p>
+      </br>
+      <p> Please Click on below options for managing store Items </p>
+      </br>
+      </br>
+      <form action="/management" method="post">
+      <input type="submit" value="Show Inventory">
+      </form>
+      <form action="/ins" method="post">
+      <input type="submit" value="Insert/Update Inventory">
+      </form>
+    </div>
+  </div>
+  </table>
+
+
+</body>
+</html>

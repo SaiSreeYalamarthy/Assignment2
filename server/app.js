@@ -34,6 +34,23 @@ const InvenSchema = {
   Priceperunit: String,
 }
 
+const axios = require('axios');
+
+const getPosts = async () => {
+  try {
+    const response = await axios.get('https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json');
+    const posts = response.data.Results.slice(0, 10);
+    return posts;
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+};
+
+module.exports = {
+  getPosts,
+};
+
 dataset();
 var app = express();
 
@@ -81,14 +98,9 @@ app.get('/update', async (req, res) => {
 
 app.get('/',async (req, res) => {
   try {
-    const items = await Item.find({});
-    if (items.length === 0) {
-      console.log('NO Items found')
-    }else{
-      console.log('Items Displayed')
-    }
+    const posts = await getPosts();
     res.render('index', {
-      storeList: items
+      apiList: posts
     });
   } catch (err) {
     console.log(err);

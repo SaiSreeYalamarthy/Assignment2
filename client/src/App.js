@@ -68,7 +68,7 @@ function App() {
       </form>
     </div><div className="App">
         <div className="container">
-         <form action="http://localhost:3000" method="post">
+         <form action="http://ec2-54-91-202-62.compute-1.amazonaws.com:3000" method="post">
           <input type="submit" value="Show Inventory"/>
         </form>
           <h1> Sum of two Number </h1>
